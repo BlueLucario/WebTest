@@ -39,10 +39,12 @@ class App{
 	}	
     
     resize(){
-        
+        this.camera.aspect = window.innerWidth/window.innerHeight;
+	this.camera.updateProjectionMatrix();
+	this.renderer.setSize(window.innerWidth, window.innerHeight);
     }
     
-	render( ) {  
+    render( ) {  
 	this.mesh.rotateY(0.01);
         this.renderer.render(this.scene, this.camera);
     }
